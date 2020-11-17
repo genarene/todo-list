@@ -1,0 +1,191 @@
+/* resetting the browser */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* background-image: radial-gradient(
+    circle 939px at 94.7% 50%,
+    rgba(0, 178, 169, 1) 0%,
+    rgba(0, 106, 101, 1) 76.9% */
+  background-image: url("./images/todo-img.jpg");
+  background-size: contain;
+
+  /* color: rgba(0, 178, 169, 1); */
+  color: #66fcf1;
+  font-family: "Itim", cursive;
+  min-height: 100vh;
+}
+
+header {
+  font-size: 1.5rem;
+}
+
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  font-family: "Itim", cursive;
+}
+
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  border: none;
+  background: white;
+  color: black;
+}
+
+form button {
+  color: #0b0c10;
+  margin-top: 25px;
+  background-color: #66fcf1;
+  font-weight: bold;
+  font-size: 1.5rem;
+  font-family: "Itim", cursive;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+form button:hover {
+  background-color: #0b0c10;
+  color: #66fcf1;
+}
+
+.todo-container {
+  display: flex;
+  /* display: grid; */
+  justify-content: space-evenly;
+
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.todo-list {
+  /* color: #45a29e; */
+  min-width: 30%;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: max-content;
+}
+.todo {
+  margin: 0.5rem;
+  background-color: #c5c6c7;
+  color: #0b0c10;
+  border: #45a29e 1px solid;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+.newTodo {
+  text-align: center;
+  background-color: #c5c6c7;
+}
+.todo-input {
+  margin: 10px;
+  color: #1f2833;
+}
+.todo li {
+  flex: 1;
+}
+
+.todo-btn {
+  /* background-color: #45a29e;
+  color: #0b0c10;
+  font-weight: bold; */
+}
+
+.complete-btn,
+.trash-btn {
+  background: #1f2833;
+  color: #c5c6c7;
+  border: none;
+  padding: 0.8rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.trash-btn {
+  color: #d81159;
+}
+.complete-btn {
+  background: #45a29e;
+}
+.todo-item {
+  padding: 0rem 0.8rem;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.fall {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+select {
+  /* remove all styles from this so as to easily style it */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+.select {
+  /* the div we have created around the select */
+
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+select {
+  background-color: white;
+  color: #0b0c10;
+  width: 10rem;
+  font-family: "Itim", cursive;
+  font-size: 1em;
+  /* height: 2em; */
+  cursor: pointer;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.select::after {
+  /* symbols */
+  content: "\25BC";
+  position: absolute;
+  background-color: #0b0c10;
+  color: #66fcf1;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  pointer-events: none;
+  transform: all 0.3s ease;
+}
+.select:hover::after {
+  background: #45a29e;
+  color: #0b0c10;
+}
